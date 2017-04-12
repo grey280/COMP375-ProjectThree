@@ -20,6 +20,14 @@ class TableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        
+        let file1 = File(title: "Linfield", description: "Linfield's website", URL: NSURL(string: "http://www.linfield.edu")!)
+        let file2 = File(title: "Stanford", description: "Stanford's website", URL: NSURL(string: "http://www.stanford.edu")!)
+        let file3 = File(title: "TwoEighty", URL: NSURL(string: "http://twoeighty.net")!)
+        files.append(file1)
+        files.append(file2)
+        files.append(file3)
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,15 +45,17 @@ class TableViewController: UITableViewController {
         return files.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FileCell", for: indexPath) as! TableViewCell
+        
         // Configure the cell...
+        
+        cell.file = files[indexPath.row]
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
