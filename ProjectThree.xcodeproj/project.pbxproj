@@ -54,14 +54,22 @@
 		2DD808371E9EA24E0083516C /* ProjectThree */ = {
 			isa = PBXGroup;
 			children = (
-				2DD808381E9EA24E0083516C /* AppDelegate.swift */,
+				2DD8084A1E9EA27D0083516C /* Supporting Files */,
 				2DD8083A1E9EA24E0083516C /* ViewController.swift */,
 				2DD8083C1E9EA24E0083516C /* Main.storyboard */,
+			);
+			path = ProjectThree;
+			sourceTree = "<group>";
+		};
+		2DD8084A1E9EA27D0083516C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2DD808381E9EA24E0083516C /* AppDelegate.swift */,
 				2DD8083F1E9EA24E0083516C /* Assets.xcassets */,
 				2DD808411E9EA24E0083516C /* LaunchScreen.storyboard */,
 				2DD808441E9EA24E0083516C /* Info.plist */,
 			);
-			path = ProjectThree;
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
