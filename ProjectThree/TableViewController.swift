@@ -56,6 +56,29 @@ class TableViewController: UITableViewController {
         return cell
     }
     
+    // Enable a row to be swiped
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool{
+        return true;
+    }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?{
+        
+        let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (rowAction, indexPath) in
+            print("edit row")
+//            self.performSegue(withIdentifier: "Edit Cell", sender: indexPath)
+            let vc = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "EditVC") as! EditCellViewController
+            vc.file = self.files[indexPath.row]
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete"){
+            (rowAction, indexPath) in
+            print("delete row")
+        }
+        
+        return [deleteAction, editAction]
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

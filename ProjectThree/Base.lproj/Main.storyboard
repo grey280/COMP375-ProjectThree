@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Files-->
         <scene sceneID="9wW-hn-2z1">
             <objects>
                 <tableViewController id="xXs-W5-UL2" customClass="TableViewController" customModule="ProjectThree" customModuleProvider="target" sceneMemberID="viewController">
@@ -60,9 +60,9 @@
                             <outlet property="delegate" destination="xXs-W5-UL2" id="44P-CE-esx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="6PF-jt-Itz"/>
+                    <navigationItem key="navigationItem" title="Files" id="6PF-jt-Itz"/>
                     <connections>
-                        <segue destination="TyY-NE-oyc" kind="showDetail" identifier="EditCell" id="ZTn-Vm-Dt8"/>
+                        <segue destination="TyY-NE-oyc" kind="show" identifier="Edit Cell" action="showDetailViewController:sender:" id="ZTn-Vm-Dt8"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L52-iq-eme" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -72,7 +72,7 @@
         <!--Edit Cell View Controller-->
         <scene sceneID="aYe-uU-CC3">
             <objects>
-                <viewController id="TyY-NE-oyc" customClass="EditCellViewController" customModule="ProjectThree" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditVC" id="TyY-NE-oyc" customClass="EditCellViewController" customModule="ProjectThree" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zh9-F7-qZs"/>
                         <viewControllerLayoutGuide type="bottom" id="pTD-n6-ucg"/>
@@ -82,7 +82,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MPE-y6-Iny">
-                                <rect key="frame" x="16" y="27" width="343" height="230.5"/>
+                                <rect key="frame" x="16" y="72" width="343" height="230.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bfS-Gr-LSS">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="71.5"/>
@@ -157,7 +157,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="MPE-y6-Iny" firstAttribute="top" secondItem="zh9-F7-qZs" secondAttribute="bottom" constant="7" id="ExD-dQ-dhP"/>
+                            <constraint firstItem="MPE-y6-Iny" firstAttribute="top" secondItem="zh9-F7-qZs" secondAttribute="bottom" constant="8" id="ExD-dQ-dhP"/>
                             <constraint firstItem="MPE-y6-Iny" firstAttribute="centerX" secondItem="cnF-c0-HOq" secondAttribute="centerX" id="FsF-Bt-28r"/>
                             <constraint firstAttribute="leadingMargin" secondItem="MPE-y6-Iny" secondAttribute="leading" id="JwG-pT-cKN"/>
                         </constraints>
