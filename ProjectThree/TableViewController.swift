@@ -12,6 +12,11 @@ class TableViewController: UITableViewController {
     
     var files = [File]()
 
+    @IBOutlet var tView: UITableView!
+    @IBAction func refreshButtonPress(_ sender: UIBarButtonItem) {
+        tView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

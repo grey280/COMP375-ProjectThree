@@ -22,4 +22,10 @@ class File {
         self.shortDescription = description
         self.URL = URL
     }
+    
+    init(){
+        self.title = ""
+        self.shortDescription = ""
+        self.URL = NSURL()
+    }
 }

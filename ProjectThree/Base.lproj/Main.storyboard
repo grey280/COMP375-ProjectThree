@@ -60,8 +60,15 @@
                             <outlet property="delegate" destination="xXs-W5-UL2" id="44P-CE-esx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Files" id="6PF-jt-Itz"/>
+                    <navigationItem key="navigationItem" title="Files" id="6PF-jt-Itz">
+                        <barButtonItem key="rightBarButtonItem" title="Refresh" id="glg-2H-yM5">
+                            <connections>
+                                <action selector="refreshButtonPress:" destination="xXs-W5-UL2" id="3ct-tg-e6v"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="tView" destination="xgq-dX-s0J" id="xg2-R0-YoK"/>
                         <segue destination="TyY-NE-oyc" kind="show" identifier="Edit Cell" action="showDetailViewController:sender:" id="ZTn-Vm-Dt8"/>
                     </connections>
                 </tableViewController>

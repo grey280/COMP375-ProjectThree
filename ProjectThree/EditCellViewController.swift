@@ -13,7 +13,7 @@ class EditCellViewController: UIViewController {
     @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var urlField: UITextField!
     
-    var file: File!
+    lazy var file = File()
     
     @IBAction func editingDidEnd(_ sender: UITextField) {
         file.title = titleField.text ?? ""
