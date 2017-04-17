@@ -72,8 +72,6 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?{
         
         let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (rowAction, indexPath) in
-            print("edit row")
-//            self.performSegue(withIdentifier: "Edit Cell", sender: indexPath)
             let vc = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "EditVC") as! EditCellViewController
             vc.file = self.files[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
@@ -81,7 +79,6 @@ class TableViewController: UITableViewController {
         
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete"){
             (rowAction, indexPath) in
-            print("delete row")
             self.deleteRow(at: indexPath)
         }
         
@@ -90,10 +87,9 @@ class TableViewController: UITableViewController {
     
     
     func deleteRow(at indexPath: IndexPath){
-        let dialog = UIAlertController(title: "Delete?", message: "Are you sure you want to delete?", preferredStyle: .actionSheet)
+        let dialog = UIAlertController(title: nil, message: "Delete \(files[indexPath.row].title)?", preferredStyle: .actionSheet)
         let deleteButton = UIAlertAction(title: "Delete", style: .destructive) { (action) in
             self.files.remove(at: indexPath.row)
-            print("removed from files")
             self.tableView.deleteRows(at: [indexPath], with: .fade)
         }
         let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
