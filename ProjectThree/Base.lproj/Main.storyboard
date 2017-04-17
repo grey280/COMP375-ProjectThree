@@ -146,7 +146,7 @@
                                                 <rect key="frame" x="0.0" y="34.5" width="343" height="37"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="URL"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL"/>
                                                 <connections>
                                                     <action selector="editingDidEnd:" destination="TyY-NE-oyc" eventType="editingDidEnd" id="O3K-Bm-Kbv"/>
                                                 </connections>
