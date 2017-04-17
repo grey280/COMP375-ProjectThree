@@ -24,6 +24,7 @@ class TableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        
         if files.count == 0{
             let file1 = File(title: "Linfield", description: "Linfield's website", URL: NSURL(string: "http://www.linfield.edu")!)
             let file2 = File(title: "Stanford", description: "Stanford's website", URL: NSURL(string: "http://www.stanford.edu")!)
@@ -32,6 +33,13 @@ class TableViewController: UITableViewController {
             files.append(file2)
             files.append(file3)
         }
+    }
+    @IBAction func addButton(_ sender: UIBarButtonItem) {
+        let newFile = File()
+        files.append(newFile)
+        let vc = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "EditVC") as! EditCellViewController
+        vc.file = newFile
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {

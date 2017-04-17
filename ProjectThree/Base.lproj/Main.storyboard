@@ -60,7 +60,13 @@
                             <outlet property="delegate" destination="xXs-W5-UL2" id="44P-CE-esx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Files" id="6PF-jt-Itz"/>
+                    <navigationItem key="navigationItem" title="Files" id="6PF-jt-Itz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aQW-rQ-Hr2">
+                            <connections>
+                                <action selector="addButton:" destination="xXs-W5-UL2" id="DW9-2L-mZX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tView" destination="xgq-dX-s0J" id="xg2-R0-YoK"/>
                         <segue destination="TyY-NE-oyc" kind="show" identifier="Edit Cell" action="showDetailViewController:sender:" id="ZTn-Vm-Dt8"/>
