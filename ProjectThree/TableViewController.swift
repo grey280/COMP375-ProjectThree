@@ -34,6 +34,11 @@ class TableViewController: UITableViewController {
             files.append(file3)
         }
     }
+    
+    
+    /// Add a new file
+    ///
+    /// - Parameter sender: the sender
     @IBAction func addButton(_ sender: UIBarButtonItem) {
         let newFile = File()
         files.append(newFile)
