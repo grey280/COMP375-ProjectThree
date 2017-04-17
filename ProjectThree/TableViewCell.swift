@@ -13,7 +13,7 @@ class TableViewCell: UITableViewCell {
     var file: File!{
         didSet{
             titleLabel.text = file.title
-            descriptionLabel.text = file.shortDescription
+            descriptionLabel.text = file.description
         }
     }
     @IBOutlet weak var titleLabel: UILabel!

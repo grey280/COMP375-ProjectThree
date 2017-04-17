@@ -13,21 +13,22 @@ class EditCellViewController: UIViewController {
     @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var urlField: UITextField!
     
+    /// Which file is being displayed
     lazy var file = File()
     
+    /// When editing ends, save data
+    ///
+    /// - Parameter sender: the sender
     @IBAction func editingDidEnd(_ sender: UITextField) {
         file.title = titleField.text ?? ""
-        file.shortDescription = descriptionField.text ?? ""
+        file.description = descriptionField.text ?? ""
         file.URL = NSURL(string: urlField.text!) ?? NSURL()
-        
-        print("theoretically saving some stuff")
-        // TODO this doesn't actually save stuff yet, whoops
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         titleField.text? = file.title
-        descriptionField.text? = file.shortDescription
+        descriptionField.text? = file.description
         urlField.text? = file.URL.absoluteString ?? ""
         // Do any additional setup after loading the view.
     }

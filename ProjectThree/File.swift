@@ -10,7 +10,7 @@ import Foundation
 
 class File {
     var title: String
-    var shortDescription: String
+    var description: String
     var URL: NSURL
     
     convenience init(title: String, URL: NSURL){
@@ -19,13 +19,13 @@ class File {
     
     init(title: String, description: String, URL: NSURL){
         self.title = title
-        self.shortDescription = description
+        self.description = description
         self.URL = URL
     }
     
     init(){
         self.title = ""
-        self.shortDescription = ""
+        self.description = ""
         self.URL = NSURL()
     }
 }

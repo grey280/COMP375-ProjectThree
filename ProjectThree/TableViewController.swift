@@ -12,6 +12,7 @@ class TableViewController: UITableViewController {
 
     @IBOutlet var tView: UITableView!
     
+    /// List of files to be displayed
     var files = [File]()
     
     override func viewDidLoad() {
@@ -45,15 +46,31 @@ class TableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
+    /// Number of sections in table; only one
+    ///
+    /// - Parameter tableView: Which tableView we're getting info for
+    /// - Returns: 1
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
+    /// Number of rows in the section
+    ///
+    /// - Parameters:
+    ///   - tableView: tableView to get info for
+    ///   - section: Which section? Ignored
+    /// - Returns: files.count
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return files.count
     }
 
     
+    /// Get a cell to display
+    ///
+    /// - Parameters:
+    ///   - tableView: tableView to get a cell for
+    ///   - indexPath: Which cell to get
+    /// - Returns: the built cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FileCell", for: indexPath) as! TableViewCell
         
@@ -64,13 +81,23 @@ class TableViewController: UITableViewController {
         return cell
     }
     
-    // Enable a row to be swiped
+    /// Are cells allowed to be edited?
+    ///
+    /// - Parameters:
+    ///   - tableView: Which tableView to use
+    ///   - indexPath: Which cell we're asking about; ignored
+    /// - Returns: Whether or not the cell can be edited - always true
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool{
         return true;
     }
     
+    /// Which edit actions are allowed on a cell?
+    ///
+    /// - Parameters:
+    ///   - tableView: which tableView
+    ///   - indexPath: which cell
+    /// - Returns: the set of edit actions allowed on a cell
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?{
-        
         let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (rowAction, indexPath) in
             let vc = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "EditVC") as! EditCellViewController
             vc.file = self.files[indexPath.row]
@@ -86,6 +113,9 @@ class TableViewController: UITableViewController {
     }
     
     
+    /// Asks the user if they're sure they want to delete before it'll let it happen
+    ///
+    /// - Parameter indexPath: which cell to delete?
     func deleteRow(at indexPath: IndexPath){
         let dialog = UIAlertController(title: nil, message: "Delete \(files[indexPath.row].title)?", preferredStyle: .actionSheet)
         let deleteButton = UIAlertAction(title: "Delete", style: .destructive) { (action) in
