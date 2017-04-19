@@ -22,7 +22,7 @@ class TableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+         self.navigationItem.leftBarButtonItem = self.editButtonItem
         
         
         if files.count == 0{
@@ -128,7 +128,7 @@ class TableViewController: UITableViewController {
     
     /// Asks the user if they're sure they want to delete before it'll let it happen
     ///
-    /// - Parameter indexPath: which cell to delete?
+    /// - Parameter indexPath: The location of the cell to delete.
     func deleteRow(at indexPath: IndexPath){
         let dialog = UIAlertController(title: nil, message: "Delete \(files[indexPath.row].title)?", preferredStyle: .actionSheet)
         let deleteButton = UIAlertAction(title: "Delete", style: .destructive) { (action) in
@@ -141,12 +141,17 @@ class TableViewController: UITableViewController {
         present(dialog, animated: true, completion: nil)
     }
 
-    /*
     // Override to support rearranging the table view.
+    /// Move an item from one place to another in the data store
+    ///
+    /// - Parameters:
+    ///   - tableView: The tableView to use.
+    ///   - fromIndexPath: The location being moved from
+    ///   - to: The location being moved to
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+        let element = files.remove(at: fromIndexPath.row)
+        files.insert(element, at: to.row)
     }
-    */
 
     /*
     // MARK: - Navigation
