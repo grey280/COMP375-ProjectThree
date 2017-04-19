@@ -19,8 +19,10 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    /// Whether or not the URL is being displayed
     private var showingURL = false
 
+    /// Toggles whether the description or the URL is being displayed
     func swapDisplay(){
         if(showingURL){
             showingURL=false
