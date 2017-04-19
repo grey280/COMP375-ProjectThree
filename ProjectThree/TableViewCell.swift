@@ -25,7 +25,7 @@ class TableViewCell: UITableViewCell {
     /// Toggles whether the description or the URL is being displayed
     func swapDisplay(){
         if(showingURL){
-            showingURL=false
+            showingURL = false
             descriptionLabel.text = file.URL.absoluteString ?? ""
         }else{
             showingURL = true
@@ -36,6 +36,8 @@ class TableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        // Create and add the swipe recognizer for switching between showing the URL and the description
         let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swapDisplay))
         swipeRecognizer.direction = .right
         self.addGestureRecognizer(swipeRecognizer)
