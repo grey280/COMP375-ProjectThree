@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ueT-Be-cgs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ueT-Be-cgs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -52,6 +52,7 @@
                                 <connections>
                                     <outlet property="descriptionLabel" destination="85U-e5-Jqx" id="cfM-Uz-4wx"/>
                                     <outlet property="titleLabel" destination="0V5-FT-r7n" id="HU3-5o-koR"/>
+                                    <segue destination="Qft-5p-4iQ" kind="show" id="wN4-vu-TX2"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -75,6 +76,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L52-iq-eme" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1020" y="-9.4452773613193415"/>
+        </scene>
+        <!--File View Controller-->
+        <scene sceneID="rit-kP-e9P">
+            <objects>
+                <viewController id="Qft-5p-4iQ" customClass="FileViewController" customModule="ProjectThree" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OCl-JX-cTD"/>
+                        <viewControllerLayoutGuide type="bottom" id="0eK-q1-qMT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uDn-ek-kMz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Usb-Sc-ex1">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Usb-Sc-ex1" firstAttribute="top" secondItem="OCl-JX-cTD" secondAttribute="bottom" id="F81-dO-gV6"/>
+                            <constraint firstItem="Usb-Sc-ex1" firstAttribute="bottom" secondItem="0eK-q1-qMT" secondAttribute="top" id="bd1-Ys-P9n"/>
+                            <constraint firstAttribute="trailing" secondItem="Usb-Sc-ex1" secondAttribute="trailing" id="oVk-2Y-bkS"/>
+                            <constraint firstItem="Usb-Sc-ex1" firstAttribute="leading" secondItem="uDn-ek-kMz" secondAttribute="leading" id="wrY-eg-Nyb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="Usb-Sc-ex1" id="n0L-Lc-3T4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y8h-zx-hue" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1869.5999999999999" y="301.79910044977515"/>
         </scene>
         <!--Edit Cell View Controller-->
         <scene sceneID="aYe-uU-CC3">
@@ -177,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Du1-0q-fpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864.8" y="-221.73913043478262"/>
+            <point key="canvasLocation" x="1873" y="-399"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jio-Q2-0y7">

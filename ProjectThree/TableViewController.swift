@@ -153,14 +153,16 @@ class TableViewController: UITableViewController {
         files.insert(element, at: to.row)
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        guard let fVC = segue.destination as? FileViewController else{
+            return // we don't handle this here
+        }
+        fVC.file = files[2] // TODO: replace with actually getting the correct file
     }
-    */
 
 }
