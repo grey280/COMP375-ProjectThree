@@ -89,25 +89,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Usb-Sc-ex1">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Usb-Sc-ex1">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="skb-cz-ZTr">
+                                        <rect key="frame" x="0.0" y="-64" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
                             </scrollView>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jwz-Yx-rgN">
+                                <rect key="frame" x="16" y="0.0" width="343" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Usb-Sc-ex1" firstAttribute="top" secondItem="OCl-JX-cTD" secondAttribute="bottom" id="F81-dO-gV6"/>
+                            <constraint firstItem="Jwz-Yx-rgN" firstAttribute="centerY" secondItem="uDn-ek-kMz" secondAttribute="centerY" id="IxJ-PB-fgq"/>
+                            <constraint firstItem="0eK-q1-qMT" firstAttribute="top" secondItem="Jwz-Yx-rgN" secondAttribute="bottom" id="MNH-Ne-nwj"/>
                             <constraint firstItem="Usb-Sc-ex1" firstAttribute="bottom" secondItem="0eK-q1-qMT" secondAttribute="top" id="bd1-Ys-P9n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jwz-Yx-rgN" secondAttribute="trailing" id="o4U-sk-FpD"/>
                             <constraint firstAttribute="trailing" secondItem="Usb-Sc-ex1" secondAttribute="trailing" id="oVk-2Y-bkS"/>
+                            <constraint firstItem="Jwz-Yx-rgN" firstAttribute="leading" secondItem="uDn-ek-kMz" secondAttribute="leadingMargin" id="sf5-PC-fK4"/>
                             <constraint firstItem="Usb-Sc-ex1" firstAttribute="leading" secondItem="uDn-ek-kMz" secondAttribute="leading" id="wrY-eg-Nyb"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="skb-cz-ZTr" id="Xhy-YD-L0l"/>
                         <outlet property="scrollView" destination="Usb-Sc-ex1" id="n0L-Lc-3T4"/>
+                        <outlet property="webView" destination="Jwz-Yx-rgN" id="N7w-ws-NgW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8h-zx-hue" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1869.5999999999999" y="301.79910044977515"/>
+            <point key="canvasLocation" x="1855" y="317"/>
         </scene>
         <!--Edit Cell View Controller-->
         <scene sceneID="aYe-uU-CC3">
