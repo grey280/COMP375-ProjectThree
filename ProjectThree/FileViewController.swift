@@ -13,32 +13,12 @@ class FileViewController: UIViewController {
     weak var file: File!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    private func invalidURLError(){
-        print("Attempted to load an invalid file.")
-        let margins = scrollView.layoutMarginsGuide
-        let problemLabel = UILabel()
-        problemLabel.text = "Invalid URL"
-        scrollView.addSubview(problemLabel)
-        problemLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 8).isActive = true
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // TODO: set the title of the page to the file.title
         
-        guard let fileType = file.URL.pathExtension else{ // If it's an invalid URL, we'll drop in a label saying as much
-            // TODO: this loads fileType as a blank string, which is... not what we want
-            invalidURLError()
-            return
-        }
-        print(fileType)
-        guard fileType != "" else {
-            invalidURLError()
-            return
-        }
-        print("Loaded a valid file.")
-        print(fileType)
+        
         // TODO: load either a page or an image here
     }
 
