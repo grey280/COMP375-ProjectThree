@@ -32,7 +32,7 @@ class FileViewController: UIViewController {
             imageView.removeFromSuperview()
             scrollView.removeFromSuperview()
             let request = NSURLRequest(url: file.URL as URL)
-            webView.load(request as URLRequest, mimeType: "text/html", textEncodingName: "UTF-8", baseURL: URL("this doesn't make sense"))
+            webView.load(request as URLRequest)
             // TODO: finish this
         }
         
