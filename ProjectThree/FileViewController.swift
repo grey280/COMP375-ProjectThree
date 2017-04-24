@@ -16,7 +16,7 @@ class FileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TODO: set the title of the page to the file.title
+        self.title = file.title
         
         
         // TODO: load either a page or an image here

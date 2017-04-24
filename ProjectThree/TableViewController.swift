@@ -162,7 +162,10 @@ class TableViewController: UITableViewController {
         guard let fVC = segue.destination as? FileViewController else{
             return // we don't handle this here
         }
-        fVC.file = files[2] // TODO: replace with actually getting the correct file
+        guard let sCell = sender as? TableViewCell else{
+            return // that shouldn't be POSSIBLE my friend
+        }
+        fVC.file = sCell.file
     }
 
 }
