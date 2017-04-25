@@ -11,7 +11,7 @@ import Foundation
 class File {
     var title: String
     var description: String
-    var URL: NSURL
+    var URL: NSURL // Using NSURL instead of URL because the documentation likes it better that way
     
     convenience init(title: String, URL: NSURL){
         self.init(title: title, description: "", URL: URL)

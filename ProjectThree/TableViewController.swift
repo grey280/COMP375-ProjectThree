@@ -19,25 +19,20 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         self.navigationItem.leftBarButtonItem = self.editButtonItem
+        self.navigationItem.leftBarButtonItem = self.editButtonItem // Show edit button on the left
         
-        
+        // Build some default files
         if files.count == 0{
             let file1 = File(title: "Linfield", description: "Linfield's website", URL: NSURL(string: "http://www.linfield.edu")!)
             let file2 = File(title: "Stanford", description: "Stanford's website", URL: NSURL(string: "http://www.stanford.edu")!)
-            let file3 = File(title: "TwoEighty", URL: NSURL(string: "http://twoeighty.net")!)
-            let file4 = File(title: "NYF", description: "Not Your Forte logo", URL: NSURL(string: "http://cdn.twoeighty.net/static/NYF.jpg")!)
+            let file3 = File(title: "TwoEighty", URL: NSURL(string: "http://twoeighty.net")!) // Example of file without description
+            let file4 = File(title: "NYF", description: "Not Your Forte logo", URL: NSURL(string: "http://cdn.twoeighty.net/static/NYF.jpg")!) // Example of image file
             files.append(file1)
             files.append(file2)
             files.append(file3)
             files.append(file4)
         }
     }
-    
     
     /// Add a new file
     ///
@@ -50,7 +45,7 @@ class TableViewController: UITableViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) { // Reload the table view when it appears; fixes some issues with not showing new data after editing a file
         super.viewWillAppear(animated)
         tView.reloadData()
     }
@@ -79,7 +74,6 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return files.count
     }
-
     
     /// Get a cell to display
     ///
@@ -89,11 +83,7 @@ class TableViewController: UITableViewController {
     /// - Returns: the built cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FileCell", for: indexPath) as! TableViewCell
-        
-        // Configure the cell...
-        
         cell.file = files[indexPath.row]
-
         return cell
     }
     
@@ -127,7 +117,6 @@ class TableViewController: UITableViewController {
         
         return [deleteAction, editAction]
     }
-    
     
     /// Asks the user if they're sure they want to delete before it'll let it happen
     ///
@@ -173,18 +162,11 @@ class TableViewController: UITableViewController {
             self.navigationController?.title = relevantFile.title
         }
     }
-    
-    
 
     // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let iVC = segue.destination as? ImageViewController else{
-            return // this isn't the kind we're dealing with here
-        }
-        guard let sFile = sender as? File else{
-            return // whoops
+        guard let iVC = segue.destination as? ImageViewController, let sFile = sender as? File else{
+            return // something went wrong and everything's about to explode anyways
         }
         iVC.file = sFile
     }

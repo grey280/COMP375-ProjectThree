@@ -35,16 +35,10 @@ class TableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Create and add the swipe recognizer for switching between showing the URL and the description
         let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swapDisplay))
         swipeRecognizer.direction = .right
         self.addGestureRecognizer(swipeRecognizer)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
