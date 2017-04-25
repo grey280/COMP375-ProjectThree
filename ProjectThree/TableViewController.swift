@@ -160,7 +160,7 @@ class TableViewController: UITableViewController {
         case "jpeg", "jpg", "png", "gif":
             return
         default:
-            let sVC = SFSafariViewController(url: relevantFile.URL as! URL)
+            let sVC = SFSafariViewController(url: relevantFile.URL as URL)
             self.navigationController?.pushViewController(sVC, animated: true)
         }
     }
