@@ -20,7 +20,13 @@ class File {
     init(title: String, description: String, URL: NSURL){
         self.title = title
         self.description = description
-        self.URL = URL
+        
+        let comps = NSURLComponents(string: URL.absoluteString!)
+        comps?.scheme = "https"
+        let string = comps!.string!
+        
+        self.URL = NSURL(string: string)!
+        
     }
     
     init(){
