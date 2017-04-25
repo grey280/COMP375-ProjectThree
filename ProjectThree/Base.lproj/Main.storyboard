@@ -99,20 +99,20 @@
                                 </subviews>
                             </scrollView>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jwz-Yx-rgN">
-                                <rect key="frame" x="16" y="0.0" width="343" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jwz-Yx-rgN" secondAttribute="trailing" constant="-16" id="9f2-zE-FRJ"/>
                             <constraint firstItem="Usb-Sc-ex1" firstAttribute="top" secondItem="OCl-JX-cTD" secondAttribute="bottom" id="F81-dO-gV6"/>
                             <constraint firstItem="Jwz-Yx-rgN" firstAttribute="centerY" secondItem="uDn-ek-kMz" secondAttribute="centerY" id="IxJ-PB-fgq"/>
                             <constraint firstItem="0eK-q1-qMT" firstAttribute="top" secondItem="Jwz-Yx-rgN" secondAttribute="bottom" id="MNH-Ne-nwj"/>
                             <constraint firstItem="Usb-Sc-ex1" firstAttribute="bottom" secondItem="0eK-q1-qMT" secondAttribute="top" id="bd1-Ys-P9n"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Jwz-Yx-rgN" secondAttribute="trailing" id="o4U-sk-FpD"/>
                             <constraint firstAttribute="trailing" secondItem="Usb-Sc-ex1" secondAttribute="trailing" id="oVk-2Y-bkS"/>
-                            <constraint firstItem="Jwz-Yx-rgN" firstAttribute="leading" secondItem="uDn-ek-kMz" secondAttribute="leadingMargin" id="sf5-PC-fK4"/>
                             <constraint firstItem="Usb-Sc-ex1" firstAttribute="leading" secondItem="uDn-ek-kMz" secondAttribute="leading" id="wrY-eg-Nyb"/>
+                            <constraint firstItem="Jwz-Yx-rgN" firstAttribute="leading" secondItem="uDn-ek-kMz" secondAttribute="leadingMargin" constant="-16" id="y9j-EB-9tV"/>
                         </constraints>
                     </view>
                     <connections>
@@ -123,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8h-zx-hue" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1855" y="317"/>
+            <point key="canvasLocation" x="1853.5999999999999" y="316.19190404797604"/>
         </scene>
         <!--Edit Cell View Controller-->
         <scene sceneID="aYe-uU-CC3">

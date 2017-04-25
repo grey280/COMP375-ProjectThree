@@ -31,8 +31,12 @@ class FileViewController: UIViewController {
         default: // handle as a URL
             imageView.removeFromSuperview()
             scrollView.removeFromSuperview()
-            let request = NSURLRequest(url: file.URL as URL)
-            webView.load(request as URLRequest)
+//            let request = NSURLRequest(url: file.URL as URL)
+            webView.loadHTMLString("<a href=\"\(file.URL.absoluteString!)\">Go to URL</a>", baseURL: URL(string: "localhost"))
+
+//            webView.load(Data(), mimeType: "text/html", textEncodingName: "utf-8", baseURL: file.URL as URL)
+//            webView.load(request: request)
+            print(webView.description)
             // TODO: finish this
         }
         
