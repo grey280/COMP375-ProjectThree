@@ -70,6 +70,7 @@
                     <connections>
                         <outlet property="tView" destination="xgq-dX-s0J" id="xg2-R0-YoK"/>
                         <segue destination="TyY-NE-oyc" kind="show" identifier="Edit Cell" action="showDetailViewController:sender:" id="ZTn-Vm-Dt8"/>
+                        <segue destination="KIg-mi-DLi" kind="show" identifier="ImageView" id="heb-Aa-eI3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L52-iq-eme" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -178,6 +179,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Du1-0q-fpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1873" y="-399"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="yO0-vW-b8X">
+            <objects>
+                <viewController id="KIg-mi-DLi" customClass="ImageViewController" customModule="ProjectThree" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cVb-Mb-I45"/>
+                        <viewControllerLayoutGuide type="bottom" id="sKr-n1-0JP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i2W-6T-E1p">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JVU-lg-dyA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JVU-lg-dyA" firstAttribute="top" secondItem="i2W-6T-E1p" secondAttribute="top" id="Iva-eO-Oqk"/>
+                            <constraint firstItem="JVU-lg-dyA" firstAttribute="leading" secondItem="i2W-6T-E1p" secondAttribute="leading" id="e9H-St-w5Y"/>
+                            <constraint firstAttribute="trailing" secondItem="JVU-lg-dyA" secondAttribute="trailing" id="k5N-4D-YLI"/>
+                            <constraint firstItem="JVU-lg-dyA" firstAttribute="bottom" secondItem="sKr-n1-0JP" secondAttribute="top" id="rH0-ON-S0N"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="JVU-lg-dyA" id="0ga-Na-TwA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bXe-SI-neq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1901.5999999999999" y="396.25187406296857"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jio-Q2-0y7">

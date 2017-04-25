@@ -154,6 +154,11 @@ class TableViewController: UITableViewController {
         files.insert(element, at: to.row)
     }
     
+    /// Handle a row in the tableView being selected; used since you can't fire an @IBAction from a UITableViewCell
+    ///
+    /// - Parameters:
+    ///   - tableView: the table view being used
+    ///   - indexPath: which row was tapped
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let relevantFile = files[indexPath.row]
         switch relevantFile.URL.pathExtension! {
