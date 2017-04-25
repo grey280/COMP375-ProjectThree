@@ -170,6 +170,7 @@ class TableViewController: UITableViewController {
         default:
             let sVC = SFSafariViewController(url: relevantFile.URL as URL)
             self.navigationController?.pushViewController(sVC, animated: true)
+            self.navigationController?.title = relevantFile.title
         }
     }
     

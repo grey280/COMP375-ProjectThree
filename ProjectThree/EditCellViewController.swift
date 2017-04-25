@@ -21,12 +21,14 @@ class EditCellViewController: UIViewController {
     /// - Parameter sender: the sender
     @IBAction func editingDidEnd(_ sender: UITextField) {
         file.title = titleField.text ?? ""
+        self.title = titleField.text ?? ""
         file.description = descriptionField.text ?? ""
         file.URL = NSURL(string: urlField.text!) ?? NSURL()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = file.title
         titleField.text? = file.title
         descriptionField.text? = file.description
         urlField.text? = file.URL.absoluteString ?? ""

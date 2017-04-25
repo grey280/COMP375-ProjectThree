@@ -20,12 +20,19 @@ class ImageViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        let dat = NSData(contentsOf: file.URL as URL)!
-        imageView.image = UIImage(data: dat as Data)
-        self.scrollView.addSubview(imageView)
-        imageView.image = UIImage(named: "Linfield")
-        imageView.sizeToFit()
-        scrollView?.contentSize = imageView.frame.size
+        print("Loading image from \(file.URL.absoluteString!)")
+        
+        if let dat = NSData(contentsOf: file.URL as URL){
+            print("if let passed")
+            imageView.image = UIImage(data: dat as Data)
+            scrollView.addSubview(imageView)
+            imageView.sizeToFit()
+            scrollView?.contentSize = imageView.frame.size
+            self.title = file.title
+        }else{
+            self.title = "404 Image Not Found"
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
