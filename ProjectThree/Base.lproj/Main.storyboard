@@ -70,7 +70,7 @@
                     <connections>
                         <outlet property="tView" destination="xgq-dX-s0J" id="xg2-R0-YoK"/>
                         <segue destination="TyY-NE-oyc" kind="show" identifier="Edit Cell" action="showDetailViewController:sender:" id="ZTn-Vm-Dt8"/>
-                        <segue destination="KIg-mi-DLi" kind="show" identifier="ImageView" id="heb-Aa-eI3"/>
+                        <segue destination="KIg-mi-DLi" kind="show" identifier="imgSegue" id="heb-Aa-eI3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L52-iq-eme" userLabel="First Responder" sceneMemberID="firstResponder"/>

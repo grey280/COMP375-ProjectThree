@@ -30,9 +30,11 @@ class TableViewController: UITableViewController {
             let file1 = File(title: "Linfield", description: "Linfield's website", URL: NSURL(string: "http://www.linfield.edu")!)
             let file2 = File(title: "Stanford", description: "Stanford's website", URL: NSURL(string: "http://www.stanford.edu")!)
             let file3 = File(title: "TwoEighty", URL: NSURL(string: "http://twoeighty.net")!)
+            let file4 = File(title: "NYF", description: "Not Your Forte logo", URL: NSURL(string: "http://cdn.twoeighty.net/static/NYF.jpg")!)
             files.append(file1)
             files.append(file2)
             files.append(file3)
+            files.append(file4)
         }
     }
     
@@ -163,6 +165,7 @@ class TableViewController: UITableViewController {
         let relevantFile = files[indexPath.row]
         switch relevantFile.URL.pathExtension! {
         case "jpeg", "jpg", "png", "gif":
+            self.performSegue(withIdentifier: "imgSegue", sender: relevantFile)
             return
         default:
             let sVC = SFSafariViewController(url: relevantFile.URL as URL)
@@ -173,11 +176,17 @@ class TableViewController: UITableViewController {
     
 
     // MARK: - Navigation
-    /*
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        guard let iVC = segue.destination as? ImageViewController else{
+            return // this isn't the kind we're dealing with here
+        }
+        guard let sFile = sender as? File else{
+            return // whoops
+        }
+        iVC.file = sFile
     }
-    */
+    
 
 }
