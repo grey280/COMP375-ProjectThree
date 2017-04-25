@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class TableViewController: UITableViewController {
 
@@ -152,20 +153,26 @@ class TableViewController: UITableViewController {
         let element = files.remove(at: fromIndexPath.row)
         files.insert(element, at: to.row)
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let relevantFile = files[indexPath.row]
+        switch relevantFile.URL.pathExtension! {
+        case "jpeg", "jpg", "png", "gif":
+            return
+        default:
+            let sVC = SFSafariViewController(url: relevantFile.URL as! URL)
+            self.navigationController?.pushViewController(sVC, animated: true)
+        }
+    }
+    
+    
 
     // MARK: - Navigation
-
+    /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        guard let fVC = segue.destination as? FileViewController else{
-            return // we don't handle this here
-        }
-        guard let sCell = sender as? TableViewCell else{
-            return // that shouldn't be POSSIBLE my friend
-        }
-        fVC.file = sCell.file
+        
     }
+    */
 
 }
