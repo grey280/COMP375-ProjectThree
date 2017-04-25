@@ -7,16 +7,23 @@
 //
 
 import UIKit
+import WebKit
 
 class FileViewController: UIViewController {
     
     weak var file: File!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var webView: WKWebView!
+    @IBAction func debug(_ sender: Any) {
+//        print(webView.stringByEvaluatingJavaScript(from: "window.location"))
+//        let _ = webView.stringByEvaluatingJavaScript(from: "window.location = \(file.URL.absoluteString!)")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         self.title = file.title
         
@@ -31,14 +38,15 @@ class FileViewController: UIViewController {
         default: // handle as a URL
             imageView.removeFromSuperview()
             scrollView.removeFromSuperview()
-//            let request = NSURLRequest(url: file.URL as URL)
+            let request = NSURLRequest(url: file.URL as URL)
             print(file.URL)
 //            webView.loadHTMLString("<a href=\"\(file.URL.absoluteString!)\">Go to URL</a>", baseURL: URL(string: "localhost"))
 
-            webView.load(Data(), mimeType: "text/html", textEncodingName: "utf-8", baseURL: file.URL as URL)
-//            webView.load(request: request)
+//            webView.load(Data(), mimeType: "text/html", textEncodingName: "utf-8", baseURL: file.URL as URL)
+            webView.load(request as URLRequest)
             print(webView.description)
-            print(webView.stringByEvaluatingJavaScript(from: "window.location"))
+//            let _ = webView.stringByEvaluatingJavaScript(from: "window.location = \(file.URL.absoluteString!)")
+            
             // TODO: finish this
         }
         

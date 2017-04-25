@@ -98,16 +98,25 @@
                                     </imageView>
                                 </subviews>
                             </scrollView>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jwz-Yx-rgN">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jwz-Yx-rgN" customClass="WKWebView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S82-07-DRI">
+                                <rect key="frame" x="300" y="72" width="59" height="30"/>
+                                <state key="normal" title="log error"/>
+                                <connections>
+                                    <action selector="debug:" destination="Qft-5p-4iQ" eventType="touchUpInside" id="RIO-fi-Cez"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="S82-07-DRI" firstAttribute="top" secondItem="OCl-JX-cTD" secondAttribute="bottom" constant="8" id="0UN-qV-wcD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Jwz-Yx-rgN" secondAttribute="trailing" constant="-16" id="9f2-zE-FRJ"/>
                             <constraint firstItem="Usb-Sc-ex1" firstAttribute="top" secondItem="OCl-JX-cTD" secondAttribute="bottom" id="F81-dO-gV6"/>
                             <constraint firstItem="Jwz-Yx-rgN" firstAttribute="centerY" secondItem="uDn-ek-kMz" secondAttribute="centerY" id="IxJ-PB-fgq"/>
+                            <constraint firstItem="S82-07-DRI" firstAttribute="leading" secondItem="Jwz-Yx-rgN" secondAttribute="trailing" constant="-75" id="JHb-U2-8wj"/>
                             <constraint firstItem="0eK-q1-qMT" firstAttribute="top" secondItem="Jwz-Yx-rgN" secondAttribute="bottom" id="MNH-Ne-nwj"/>
                             <constraint firstItem="Usb-Sc-ex1" firstAttribute="bottom" secondItem="0eK-q1-qMT" secondAttribute="top" id="bd1-Ys-P9n"/>
                             <constraint firstAttribute="trailing" secondItem="Usb-Sc-ex1" secondAttribute="trailing" id="oVk-2Y-bkS"/>
